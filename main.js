@@ -23,8 +23,9 @@ function addNewBook() {
     (read = document.getElementById("dateread").value)
   );
   event.preventDefault();
-  library.push(book);
+  library.push(Object.values(book));
   bookDisplay.innerText = library;
+  console.log(Object.values(book))
 }
 
 class Books {
