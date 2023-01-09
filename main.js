@@ -24,8 +24,16 @@ function addNewBook() {
   );
   event.preventDefault();
   library.push(Object.values(book));
-  bookDisplay.innerText = library;
+  for (i=0;i<library.length;i++) {
+    newDiv = document.createElement('div')
+    newDiv.className = 'libraryelements'
+    newDiv.innerHTML=library[i]
+    
+  }
+  bookDisplay.appendChild(newDiv)
+
   console.log(Object.values(book))
+  console.log(library)
 }
 
 class Books {
