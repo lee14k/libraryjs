@@ -2,6 +2,8 @@ let addBook = document.getElementById("addbook");
 addBook.addEventListener("click", newBook);
 let library = [];
 let bookDisplay = document.getElementById("books");
+let book 
+let libraryList
 
 let makeBook = document.getElementById("submit");
 makeBook.addEventListener("click", addNewBook);
@@ -15,32 +17,53 @@ function newBook() {
   }
 }
 
+function pushBook () {
+  bookDisplay.innerText=""
+libraryList = Object.entries(book)
+library.push(libraryList);
+
+}
+
+
 function addNewBook() {
-  let book = new Books(
+  book = new Books(
     (title = document.getElementById("title").value),
     (author = document.getElementById("author").value),
     (pageNumber = document.getElementById("numberpages").value),
-    (read = document.getElementById("dateread").value)
+    (read = document.getElementById("dateread").value),
+
+
   );
   event.preventDefault();
-  library.push(Object.values(book));
-  for (i=0;i<library.length;i++) {
-    newDiv = document.createElement('div')
-    newDiv.className = 'libraryelements'
-    newDiv.innerHTML=library[i]
-    
-  }
-  bookDisplay.appendChild(newDiv)
+    pushBook()
+   // console.log(library)
+   library.forEach (item=> {
+    for (i=0;i<item.length;i++){
+      console.log(library[i])
+      
+    //  const element = document.createElement('div')
+     //bookDisplay.innerHTML= ""
+     //element.innerHTML=Object.entries
+    //bookDisplay.appendChild(element)
+    //element.classList.add('book')
 
-  console.log(Object.values(book))
-  console.log(library)
-}
+    }
+    
+   })
+
+  }
+
+
 
 class Books {
   constructor(title, author, pageNumber, read) {
-    (this.title = title),
-      (this.author = author),
-      (this.pageNumber = pageNumber),
-      (this.read = read);
+    (this.title = form.title.value),
+      (this.author = form.author.value),
+        (this.pageNumber = form.pageNumber.value),
+          (this.read = form.read.value);
+          event.preventDefault()
   }
 }
+
+
+

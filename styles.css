@@ -5,3 +5,8 @@ body {
 #newbook {
     display:none;
 }
+
+.book {
+    border:solid green;
+    display: flex;
+}
