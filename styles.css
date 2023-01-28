@@ -10,3 +10,8 @@ body {
     border:solid green;
     display: flex;
 }
+
+#books {
+    display:flex;
+    flex-direction: column;
+}

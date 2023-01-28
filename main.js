@@ -13,11 +13,14 @@ makeBook.addEventListener("click", addNewBook);
 
 const keyValue = (input) => Object.entries(input).forEach(([key,value]) => {
   let booger = document.createElement('div');
-  booger.innerText = (`${key} = ${value}`)
-document.body.appendChild(booger)
+  booger.classList.add("book")
+  booger.innerText = (`${key} : ${value}`)
+document.querySelector("#books").appendChild(booger)
   console.log(`${key} = ${value}`)
   craft.push(`${key} = ${value}`)
 })
+
+//allows form to display
 
 function newBook() {
   let form = document.getElementById("newbook");
@@ -28,12 +31,6 @@ function newBook() {
   }
 }
 
-function pushBook () {
-  bookDisplay.innerText=""
-//libraryList = Object.entries(book)
-//library.push(libraryList);
-
-}
 
 
 function addNewBook() {
@@ -45,29 +42,13 @@ function addNewBook() {
 
   );
   event.preventDefault();
-    pushBook()
    // console.log(library)
    keyValue(book)
-   bookDisplay.innerText=library
+  //bookDisplay.innerText=craft
    console.log(craft)
 
 
-   library.forEach (item=> {
-    for (i=0;i<item.length;i++){
-      console.log(library[i])
-      for (var key in library) {
-        console.log(key, library[key]);
-      }
-      
-    //  const element = document.createElement('div')
-     //bookDisplay.innerHTML= ""
-     //element.innerHTML=Object.entries
-    //bookDisplay.appendChild(element)
-    //element.classList.add('book')
-
-    }
-    
-   })
+   
 
   }
 
